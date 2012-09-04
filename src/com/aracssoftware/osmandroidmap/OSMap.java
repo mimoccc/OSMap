@@ -29,10 +29,10 @@ public class OSMap extends Activity {
         mIL = new MIL(marker, resourceProxy);
         mapView.getOverlays().add(mIL);
          
-        GeoPoint myPoint1 = new GeoPoint(0*1000000, 0*1000000);
+        GeoPoint myPoint1 = new GeoPoint(40.37044, 49.84139);
         mIL.addItem(myPoint1, "myPoint1", "myPoint1");
-        GeoPoint myPoint2 = new GeoPoint(50*1000000, 50*1000000);
-        mIL.addItem(myPoint2, "myPoint2", "myPoint2");
+       // GeoPoint myPoint2 = new GeoPoint(50*1000000, 50*1000000);
+       // mIL.addItem(myPoint2, "myPoint2", "myPoint2");
          
     } 
      
