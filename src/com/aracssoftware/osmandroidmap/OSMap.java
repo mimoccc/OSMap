@@ -7,11 +7,12 @@ import org.osmdroid.views.MapView;
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import org.osmdroid.views.overlay.MyLocationOverlay;
  
 public class OSMap extends Activity {
   
  MIL mIL = null;
- 
+ MyLocationOverlay mLO = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,10 @@ public class OSMap extends Activity {
         mIL.addItem(myPoint1, "myPoint1", "myPoint1");
        // GeoPoint myPoint2 = new GeoPoint(50*1000000, 50*1000000);
        // mIL.addItem(myPoint2, "myPoint2", "myPoint2");
+        
+        mLO = new MyLocationOverlay(this, mapView);
+        mapView.getOverlays().add(mLO);
+        mLO.enableMyLocation();
          
     } 
      
