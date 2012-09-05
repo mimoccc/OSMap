@@ -40,5 +40,23 @@ public class OSMap extends Activity {
         mLO.enableMyLocation();
          
     } 
+    
+    @Override
+    protected void onResume() {
+     // TODO Auto-generated method stub
+     super.onResume();
+     mLO.enableMyLocation();
+     mLO.enableCompass();
+     mLO.enableFollowLocation();
+    } 
+     
+    @Override
+    protected void onPause() {
+     // TODO Auto-generated method stub
+     super.onPause();
+     mLO.disableMyLocation();
+     mLO.disableCompass();
+     mLO.disableFollowLocation();
+    }
      
 }
