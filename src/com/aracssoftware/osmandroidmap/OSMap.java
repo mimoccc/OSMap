@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import org.osmdroid.views.overlay.MyLocationOverlay;
+import org.osmdroid.views.overlay.ScaleBarOverlay;
+import org.osmdroid.views.MapController;
  
 public class OSMap extends Activity {
   
  MIL mIL = null;
  MyLocationOverlay mLO = null;
+ MapController myMapController = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,11 @@ public class OSMap extends Activity {
         mLO = new MyLocationOverlay(this, mapView);
         mapView.getOverlays().add(mLO);
         mLO.enableMyLocation();
+        myMapController = mapView.getController();
+        myMapController.setZoom(3);
+         
+        ScaleBarOverlay myScaleBarOverlay = new ScaleBarOverlay(this);
+        mapView.getOverlays().add(myScaleBarOverlay);
          
     } 
     
